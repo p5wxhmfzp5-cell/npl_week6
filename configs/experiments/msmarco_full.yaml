@@ -1,0 +1,39 @@
+experiment_name: msmarco_full_benchmark
+
+dataset: msmarco
+
+methods:
+
+  - bm25
+  - tfidf
+  - dense_minilm
+  - dense_m3
+  - hybrid_rrf
+  - colbert_cpu
+  - cross_encoder_rerank
+  - hyde
+
+evaluation:
+
+  primary_metric: mrr@10
+
+  metrics:
+    - mrr@10
+    - recall@10
+    - map
+    - latency_ms
+    - throughput_qps
+
+output:
+
+  metrics_dir: outputs/metrics/msmarco
+  rankings_dir: outputs/rankings/msmarco
+  plots_dir: outputs/plots/msmarco
+
+reproducibility:
+
+  seed: 42
+
+runtime:
+
+  save_predictions: true

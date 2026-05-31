@@ -1,0 +1,27 @@
+name: colbert_cpu
+
+retriever_class: ColBERTRetriever
+
+type: late_interaction
+
+encoder:
+
+  model_name: colbert-ir/colbertv2.0
+
+cpu_mode: true
+
+max_document_length: 180
+
+max_query_length: 32
+
+retrieval:
+
+  top_k: 20
+
+runtime:
+
+  batch_size: 8
+
+cache:
+
+  token_embeddings: true

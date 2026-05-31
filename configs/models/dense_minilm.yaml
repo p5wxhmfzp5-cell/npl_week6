@@ -1,0 +1,27 @@
+name: dense_minilm
+
+retriever_class: DenseRetriever
+
+type: dense
+
+encoder:
+
+  model_name: sentence-transformers/all-MiniLM-L6-v2
+
+pooling: mean
+
+normalize_embeddings: true
+
+index:
+
+  backend: faiss_cpu
+
+  metric: cosine
+
+runtime:
+
+  batch_size: 32
+
+cache:
+
+  embeddings: true

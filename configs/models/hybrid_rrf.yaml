@@ -1,0 +1,24 @@
+name: hybrid_rrf
+
+retriever_class: HybridRRFRetriever
+
+type: hybrid
+
+components:
+
+  sparse: bm25
+
+  dense: dense_m3
+
+fusion:
+
+  method: rrf
+
+  k: 60
+
+retrieval:
+
+  sparse_top_k: 100
+  dense_top_k: 100
+
+final_top_k: 10

@@ -1,0 +1,34 @@
+experiment_name: scifact_full_benchmark
+
+dataset: scifact
+
+methods:
+
+  - bm25
+  - tfidf
+  - dense_minilm
+  - dense_m3
+  - hybrid_rrf
+  - colbert_cpu
+  - cross_encoder_rerank
+  - hyde
+
+evaluation:
+
+  primary_metric: ndcg@10
+
+  metrics:
+    - ndcg@10
+    - recall@10
+    - map
+    - latency_ms
+
+output:
+
+  metrics_dir: outputs/metrics/scifact
+  rankings_dir: outputs/rankings/scifact
+  plots_dir: outputs/plots/scifact
+
+reproducibility:
+
+  seed: 42

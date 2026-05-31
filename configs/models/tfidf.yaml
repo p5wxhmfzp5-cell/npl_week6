@@ -1,0 +1,21 @@
+name: tfidf
+
+retriever_class: TFIDFRetriever
+
+type: sparse
+
+parameters:
+
+  max_features: 50000
+
+  ngram_range:
+    - 1
+    - 2
+
+  min_df: 2
+
+  max_df: 0.95
+
+runtime:
+
+  batch_size: 64

@@ -1,0 +1,27 @@
+name: dense_m3
+
+retriever_class: DenseRetriever
+
+type: dense
+
+encoder:
+
+  model_name: msmarco-distilbert-base-v3
+
+pooling: mean
+
+normalize_embeddings: true
+
+index:
+
+  backend: faiss_cpu
+
+  metric: cosine
+
+runtime:
+
+  batch_size: 16
+
+cache:
+
+  embeddings: true

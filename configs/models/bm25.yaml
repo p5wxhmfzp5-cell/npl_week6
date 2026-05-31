@@ -1,0 +1,23 @@
+name: bm25
+
+retriever_class: BM25Retriever
+
+type: sparse
+
+parameters:
+
+  k1: 1.5
+  b: 0.75
+
+tokenization:
+
+  lowercase: true
+  remove_punctuation: true
+
+index:
+
+  save_path: data/processed/indexes/bm25
+
+runtime:
+
+  batch_size: 32

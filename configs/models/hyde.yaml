@@ -1,0 +1,30 @@
+name: hyde
+
+retriever_class: HyDERetriever
+
+type: query_expansion
+
+generator:
+
+  model_name: google/flan-t5-base
+
+  max_new_tokens: 128
+
+  temperature: 0.7
+
+encoder:
+
+  model_name: msmarco-distilbert-base-v3
+
+retrieval:
+
+  top_k: 10
+
+cache:
+
+  generated_docs: true
+  embeddings: true
+
+runtime:
+
+  batch_size: 4

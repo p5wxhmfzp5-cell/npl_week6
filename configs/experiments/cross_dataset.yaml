@@ -1,0 +1,30 @@
+experiment_name: cross_dataset_tradeoff_analysis
+
+datasets:
+
+  - msmarco
+  - scifact
+
+methods:
+
+  - bm25
+  - dense_m3
+  - hybrid_rrf
+  - hyde
+
+analysis:
+
+  compare_zero_shot_transfer: true
+  compare_latency: true
+  compare_memory: true
+  failure_analysis: true
+
+evaluation:
+
+  msmarco_metric: mrr@10
+  scifact_metric: ndcg@10
+
+output:
+
+  report_dir: reports/
+  plots_dir: outputs/plots/cross_dataset

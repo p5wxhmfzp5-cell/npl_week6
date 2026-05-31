@@ -1,0 +1,20 @@
+name: cross_encoder_rerank
+
+retriever_class: CrossEncoderRetriever
+
+type: reranker
+
+pipeline:
+
+  first_stage: dense_m3
+
+  reranker_model: cross-encoder/ms-marco-MiniLM-L-6-v2
+
+retrieval:
+
+  candidate_pool: 50
+  final_top_k: 10
+
+runtime:
+
+  batch_size: 16

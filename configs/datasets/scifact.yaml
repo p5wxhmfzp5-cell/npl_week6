@@ -1,0 +1,28 @@
+dataset_name: scifact
+
+source: beir
+
+subset: scifact
+
+query_limit: 300
+
+document_limit: 5000
+
+task_type: zero_shot_retrieval
+
+evaluation:
+
+  primary_metric: ndcg@10
+
+  secondary_metrics:
+    - recall@10
+    - map
+    - latency_ms
+
+storage:
+
+  raw_dir: data/raw/scifact
+  processed_dir: data/processed/scifact
+  cache_dir: data/cache/scifact
+
+seed: 42
