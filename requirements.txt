@@ -39,10 +39,10 @@ datasets>=2.20.0
 beir>=2.0.0
 
 ##########
-# Evaluation
+# Evaluation (optional)
 ##########
 
-pytrec_eval>=0.5
+# pytrec_eval>=0.5
 
 ##########
 # Optional IR Backend

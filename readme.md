@@ -156,6 +156,12 @@ Install the project package and CLI entry points:
 pip install -e .
 ```
 
+For evaluation metrics support, install the optional extra:
+
+```bash
+pip install -e .[evaluation]
+```
+
 After installation, you can run the CLI with either:
 
 ```bash

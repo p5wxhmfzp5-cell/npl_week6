@@ -62,13 +62,13 @@ def download(
 
     if dataset == "msmarco":
 
-        from datasets.msmarco import download_msmarco
+        from project_datasets.msmarco import download_msmarco
 
         download_msmarco()
 
     elif dataset == "scifact":
 
-        from datasets.scifact import download_scifact
+        from project_datasets.scifact import download_scifact
 
         download_scifact()
 
@@ -111,7 +111,7 @@ def index(
     )
 
     from retrieval.registry import get_retriever
-    from datasets.loader import load_dataset
+    from project_datasets.loader import load_dataset
 
     data = load_dataset(dataset)
 

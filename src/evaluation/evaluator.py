@@ -21,9 +21,12 @@ from __future__ import annotations
 
 from typing import Dict, List, Tuple
 
-import pytrec_eval
-
 from utils.logging import get_logger
+
+try:
+    import pytrec_eval
+except ImportError:  # pragma: no cover
+    pytrec_eval = None
 
 logger = get_logger(__name__)
 
@@ -139,6 +142,13 @@ class Evaluator:
         """
         Per-query evaluation.
         """
+
+        if pytrec_eval is None:
+            raise ImportError(
+                "pytrec_eval is required for evaluation. "
+                "Install it with `pip install -e .[evaluation]` or "
+                "`pip install pytrec_eval`. On Windows, this may require a Linux/WSL environment."
+            )
 
         formatted = (
             self.format_rankings(

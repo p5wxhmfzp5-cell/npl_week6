@@ -29,7 +29,7 @@ from typing import Dict, List
 import pandas as pd
 from tqdm import tqdm
 
-from datasets.loader import load_dataset
+from project_datasets.loader import load_dataset
 from evaluation.evaluator import Evaluator
 from retrieval.registry import get_retriever
 from utils.config import (
